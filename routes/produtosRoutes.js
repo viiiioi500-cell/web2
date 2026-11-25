@@ -2,32 +2,33 @@
 import { Router } from 'express';
 
 import {
-    cadastrar,
-    listar,
-    buscarPorId,
-    atualizar,
-    atualizarParcial,
-    deletar
+    cadastrarProduto,
+    listarProdutos,
+    buscarProduto,
+    atualizarProduto,
+    atualizarParcialmente,
+    excluirProduto
 } from '../controllers/produtosController.js';
 
 const router = Router();
 
 // POST - Cadastrar produto
-router.post('/', cadastrar);
+router.post('/', cadastrarProduto);
 
 // GET - Listar produtos
-router.get('/', listar);
+router.get('/', listarProdutos);
 
 // GET - Buscar produto pelo ID
-router.get('/:id', buscarPorId);
+router.get('/:id', buscarProduto);
 
 // PUT - Atualizar todos os dados
-router.put('/:id', atualizar);
+router.put('/:id', atualizarProduto);
 
 // PATCH - Atualizar parcialmente
-router.patch('/:id', atualizarParcial);
+router.patch('/:id', atualizarParcialmente);
 
 // DELETE - Excluir produto
-router.delete('/:id', deletar);
+router.delete('/:id', excluirProduto);
 
 export default router;
+
